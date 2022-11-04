@@ -42,6 +42,10 @@ const nuxtConfig = {
       src: '~/plugins/pouchdb',
       mode: 'client',
     },
+    {
+      src: '~/plugins/auth',
+      mode: 'client',
+    },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

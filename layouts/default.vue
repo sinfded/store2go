@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <NotificationToast/>
+    <NotificationToast />
     <Nuxt />
   </v-app>
 </template>
@@ -8,6 +8,6 @@
 <script>
 import { Component, Vue } from 'nuxt-property-decorator'
 
-@Component
+@Component({})
 export default class Default extends Vue {}
 </script>

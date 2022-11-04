@@ -1,13 +1,15 @@
 <template>
   <v-snackbar
-    app
+    transition="scroll-x-transition"
     timeout="1500"
     ref="snackbar"
-    light
+    :light="!$vuetify.theme.dark"
+    :dark="$vuetify.theme.dark"
     color="transparent"
     v-model="$notifier.notifierState.isNotifierEnabled"
     elevation="0"
-    bottom
+    top
+    right
     dense
   >
     <v-sheet class="pa-0" rounded="lg" elevation="4">
@@ -28,7 +30,7 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "nuxt-property-decorator";
+import { Vue, Component } from 'nuxt-property-decorator'
 
 @Component
 export default class NotificationToast extends Vue {}

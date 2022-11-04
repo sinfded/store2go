@@ -18,7 +18,12 @@
             </v-sheet>
           </v-card-title>
           <v-card-text>
-            <v-form @submit.prevent="signIn" ref="loginForm" v-model="valid" lazy-validation>
+            <v-form
+              @submit.prevent="signIn"
+              ref="loginForm"
+              v-model="valid"
+              lazy-validation
+            >
               <v-text-field
                 v-model="username"
                 :rules="usernameRules"
@@ -93,10 +98,7 @@ export default class Index extends Vue {
   password = ''
 
   signIn() {
-    console.log("Sign in")
-    // this.$auth.signInUser(this.username,this.password)
+    this.$auth.signIn(this.username, this.password)
   }
-
-
 }
 </script>

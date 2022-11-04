@@ -124,15 +124,19 @@
       <v-sheet v-if="$vuetify.breakpoint.lgAndUp" width="30%" min-width="350" max-width="500" height="100%"
         class="rounded-lg ml-4" color="accent" elevation="1"></v-sheet>
     </v-sheet>
-    <payment-modal v-if="paymentModal" :showModal="paymentModal" :toPay="cartTotal" v-on:closeModal="paymentModal = false" />
+    <PaymentModal v-if="paymentModal" :showModal="paymentModal" :toPay="cartTotal" v-on:closeModal="paymentModal = false" />
   </v-container>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
+import PaymentModal from 'Component/Modals/PaymentModal.vue';
 
 @Component({
   layout: 'main',
+  components: {
+    PaymentModal: PaymentModal
+  }
 })
 export default class Register extends Vue {
   view_format = 0
@@ -236,7 +240,7 @@ export default class Register extends Vue {
   }
 
   mounted() {
-    this.$db.info().then((info: any) => console.log(info))
+    this.$db.getInfo().then((data: NotWellDefinedObject) => console.log(data))
   }
 }
 </script>
