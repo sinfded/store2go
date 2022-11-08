@@ -46,6 +46,14 @@ const nuxtConfig = {
       src: '~/plugins/auth',
       mode: 'client',
     },
+    {
+      src: '~/plugins/format',
+      mode: 'client',
+    },
+    {
+      src: '~/plugins/inventory',
+      mode: 'client',
+    },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

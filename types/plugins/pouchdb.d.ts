@@ -7,8 +7,4 @@ export interface PouchDBPluginImp {
 
   getInfo(): Promise<NotWellDefinedObject>
   syncDB(): void
-  signIn(
-    username: string,
-    password: string
-  ): Promise<NotWellDefinedObject | void>
 }
